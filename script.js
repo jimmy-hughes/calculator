@@ -4,6 +4,7 @@ let displayValue = "";
 let num1 = "";
 let num2 = "";
 let operator = "";
+let resetNum1 = true;
 
 function add(a, b) {
     return a + b;	
@@ -98,15 +99,25 @@ function updateValues(x) {
         }
     } else if (isNumber(x)) {
         if (operator === "") {
-            num1 += x;
+            if (resetNum1) {
+                num1 = x;
+                resetNum1 = false;
+            } else {
+                num1 += x;
+            }
         } else {
             num2 += x;
         }
     } else if (x === ".") {
         if (operator === "") {
+            if (resetNum1) {
+                num1 = "0";
+                resetNum1 = false;
+            }
             if (num1.includes(".")) return;
             if (num1 == "") {
                 num1 = "0";
+                resetNum1 = false;
             }
             num1 += x;
         } else {
@@ -128,8 +139,9 @@ function updateValues(x) {
         } else {
             num2 = num2.slice(0, num2.length - 1);
         }
-    } else if (isEqualKey(x)) {
+    } else if (isEqualKey(x) && num2 != "") {
         operate();
+        resetNum1 = true;
     }
 }
 
