@@ -1,13 +1,17 @@
 :root {
     --background: #fffce2;
     --font: #db5d5d;
-    --border: #faa2aa;
+    --border: #e68990;
     --screen: #f7f8fd;
     --screen-font: #e03737;
     --calculator: #fdf0a6;
     --btn: #ffffff;
     --btn-hover: rgb(253, 247, 229);
     --btn-active: rgb(255, 243, 210);
+    --row-btn: #d6be99;
+    --row-btn-hover: rgb(224, 198, 159);
+    --row-btn-active: #c9b18e;
+    --row-btn-font: #fdfdf6;
 }
 
 body {
@@ -54,7 +58,6 @@ button {
     background-color: var(--screen);
     text-align: right;
     color: var(--screen-font);
-    /* font-weight: 400; */
     font-size: 25pt;
 }
 
@@ -64,14 +67,10 @@ button {
     grid-gap: 10px;
 }
 
-.span-2 {
-    grid-column: span 2;
-}
-
 .calc-button {
     padding: 30px;
     border: 2px var(--border) solid;
-    border-radius: 75px;
+    border-radius: 80px;
     background-color: var(--btn);
     font-size: 20px;
 }
@@ -83,4 +82,26 @@ button {
 .calc-button:active {
     background-color: var(--btn-active);
 }
+
+.row-button {
+    color: var(--row-btn-font);
+    background-color: var(--row-btn);
+    margin-bottom: 20px;
+}
+
+.row-button:hover {
+    background-color: var(--row-btn-hover);
+}
+  
+.row-button:active {
+    background-color: var(--row-btn-active);
+}
+
+.span-2 {
+    grid-column: span 2;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
   
