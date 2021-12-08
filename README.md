@@ -1,3 +1,3 @@
-# odin-calculator
+# Calculator
 
-Calculator for The Odin Project found at https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator 
+A simple calculator using JavaScript, HTML, and CSS.
